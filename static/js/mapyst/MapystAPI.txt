@@ -1,0 +1,42 @@
+Mapyst API
+
+There are three API requests to use to retrieve the desired information. For each, send a GET request to the specified url (php file) with the necessary parameters.
+
+1. Campus Information: used to retrieve the information about the campus and interpret information from other API's
+	- url: "http://www.mapyst.com/api/campus.php"
+	- parameters:
+		- "api_key": the API key given to you by Mapyst
+	- returns: JSON file containing all the information about the campus
+	- example: "http://www.mapyst.com/api/campus.php?api_key=blahblahblah"
+	- when trying to learn API, run this through a JSON formatter (to view) to learn what information it contains
+
+2. Blueprints: used to retrieve a png file of the requested blueprint
+	- url: "http://www.mapyst.com/api/blueprint.php"
+	- parameters:
+		- "building": index of the building
+		- "floor": index of the floor in the given building
+		- "api_key": the API key given to you by Mapyst
+	- returns: png file of requested blueprint
+	- example: "http://www.mapyst.com/api/blueprint.php?building=3&floor=0&api_key=blahblahblah"
+
+3. Route: used to retrieve the directions between two locations on campus or information about one location
+	- url: "http://www.mapyst.com/api/route.php"
+	- parameters:
+		- "start": text representing the user's start
+		- "end": text representing the user's end
+		- "search" : text representing any location
+		- "prefs": array of booleans representing each of the 5 preferences in the order: elevators, stairs, handicapped, inside, outside
+			- example: "true,false,true,false,false" represents the user preferring elevators and handicapped
+			- only one of elevators and stairs should be true
+			- only one of handicapped, stairs, and elevators should be true
+	- returns:
+		- if two directions from start to end
+			- startText: text showing how the user's start text was interpreted
+			- endText: text showing how the user's end text was interpreted
+			- directions: a list of direction objects
+				- each direction has a text description, a start and end, the appropriate icons, the type of direction, the time in milliseconds to walk the direction, and the latitude and longitude of each point in the direction
+		- if one location
+			- point: the point's latitude and longitude location, and building, floor, and point indexes
+			- singlePointText: text showing how the user's input was interpreted 
+	- example: "http://www.mapyst.com/api/route.php?start=bh129&end=entropy&search=&prefs=true,false,true,false,false&api_key=blahblahblah"
+	- example: "http://www.mapyst.com/api/route.php?start=&end=&search=wh5403&prefs=&api_key=blahblahblah"

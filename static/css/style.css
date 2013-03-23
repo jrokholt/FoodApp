@@ -1,0 +1,235 @@
+body {
+  font-family: lato, helvetica, arial, sans-serif;
+  font-size: 62.5%;
+}
+body, html {
+  height: 100%;
+}
+
+/*The broad page layout */
+
+.page {
+  text-align: center;
+  padding: 2rem;
+}
+
+/*Puts a header at the top of the screen with some app information*/
+header {
+  height: 2.5rem;
+  font-size: 1.61rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-family: Quicksand, sans-serif;
+  background-color: rgba(209, 231, 81, 1);
+  border-bottom: 1px solid rgba(209, 231, 81, 0.1);
+}
+
+
+/* actual content layout */
+.logo {
+  font-family: quicksand, sans-serif;
+  color: white;
+  /*I'm using em on purpose here, so that
+  the shadow is always just that percentage of the font
+  size, rather than an absolute value*/
+  text-shadow: 0.04em 0.04em #4dbce9;
+  padding: 0.3em;
+}
+
+#title-screen {
+  background-color: #26ade4;
+  padding-bottom: 5rem;
+  border-bottom: 1rem solid #4dbce9;
+}
+
+.large {
+  font-size: 1.6rem;
+}
+
+.small {
+  font-size: 1rem;
+}
+
+.button {
+  margin: 1em 0.5em;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border-radius: 0.5em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.button:hover {
+}
+
+.dark {
+  color: white;
+  background-color: #4dbce9;
+  border: 0.2rem solid #4dbce9;
+}
+
+.dark:hover {
+  background-color: #26ade4;
+}
+
+
+
+/*The column is a responsive design accomodating thing.
+Basically, it will be a fixed width, untill the screen gets
+too thin to accomodate that width, then it will shrink with
+the width of the page */
+.column, .wide-column {
+  margin: auto;
+  text-align: right;
+  overflow:hidden;
+}
+
+.column {
+  max-width: 36rem;
+}
+
+.wide-column {
+  max-width: 50rem;
+}
+
+/* Formatting the mostly text pages */
+
+h1 {
+  text-align: left;
+  font-size: 2.5rem;
+  font-family: Quicksand, sans-serif;
+  padding: 0em 0em 0.5em 0em;
+  color: #D1E751;
+}
+
+p {
+  text-align: left;
+  font-size: 1rem;
+  padding: 1em 2em;
+}
+
+.column .button {
+  display:inline-block;
+  margin: 1rem 4rem;
+}
+
+.course-list {
+  width: 30rem;
+  margin: auto;
+}
+
+.course-input {
+  width: 28rem;
+  height: 1rem;
+  overflow:hidden;
+  margin:auto;
+  display: block;
+  outline: none;
+  resize: none;
+  font-size: 1rem;
+  font-family: lato, helvetica, arial, sans-serif;
+  border: none;
+  border-bottom: 1px dashed grey;
+}
+
+.course-input:focus {
+  outline: none;
+}
+
+.course-entry {
+  font-size: 1rem;
+}
+
+.course-list td {
+  padding: 0.5em 1em;
+}
+
+.course-number {
+  text-align:left;
+}
+
+.course-name {
+  text-align: left;
+}
+
+
+/* suggestions screen */
+.map-container {
+  float: left;
+}
+
+.suggestions-container {
+  float: right;
+}
+
+.map {
+  width: 25rem;
+  border-radius: 0.5rem;
+  height: 25rem;
+  background-color: lightgrey;
+}
+
+.map-info {
+  height: 5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 0.3rem solid #D1E751;
+  text-align: left;
+  width: 22.5rem;
+}
+
+.suggestion {
+  background: #4dbce9;
+  color: white;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  overflow:hidden;
+}
+
+.suggestion h2 {
+  font-size: 1.61rem;
+  float: left;
+}
+
+.suggestion p {
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  #map-options{
+    text-align: center;
+  }
+  .column {
+    width: auto;
+    text-align: center;
+  }
+  .column-wide {
+    max-width: 25rem;
+  }
+  .suggestions-container {
+    float: none;
+  }
+  .map-container {
+    float: none;
+  }
+  .suggestion {
+    margin: 0.5rem auto 0.5rem auto;
+  }
+
+  .wide-column h1 {
+    text-align: center;
+  }
+
+  .map-info {
+    margin: 0.5rem auto 1rem auto;
+  }
+
+  .map {
+    margin: auto;
+  }
+}

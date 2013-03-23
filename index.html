@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Food App</title>
+    
+    <meta name="description" content="A template website, put together to simplify the developement process.">
+    <meta name="keywords" content="template">
+    <meta name="author" content="Taylor Poulos">
+
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:500,800,400italic|Quicksand:700' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <section class="page" id="title-screen">
+      <div class="logo big" id="main-logo">Food App</div>
+      <div>
+        <div class="dark button large" id="schedule-start">Use Schedule</div>
+        <div class="dark button large" id="location-start">Use Location</div>
+      </div>
+
+    </section>
+
+    <section class="page" id="schedule-input">
+      <div class="column">
+        <h1>Schedule</h1>
+        <table class="course-list">
+          <tbody>
+            <tr class='course-entry'>
+              <td class="course-number">15-112</td> 
+              <td class="course-name">Fundamentals of Computer Science</td>
+            </tr>
+            <tr class='course-entry'>
+              <td class="course-number">15-237</td> 
+              <td class="course-name">Cross Platform Mobile Web Apps</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <textarea class="course-input" placeholder="Course Number: e.g. 21-127"></textarea>
+
+        <div class="dark button small continue-location" id="continue-location">  
+          Continue
+        </div>
+      </div>
+    </section>
+
+
+    <section class="page" id="location-input">
+      <div class="column">
+        <h1>Location</h1>
+        <p>Click "Allow" on the box that pops up asking for permission to access location settings </p>
+        <div class="dark button small continue-location" id="continue-location">Continue</div>
+      </div>
+    </section>
+
+    <section class="page" id="map-options">
+      <div class="wide-column">
+        <h1>Recommendations</h1>
+        <div class="map-container">
+          <div class="map"></div>
+          <div class="map-info">Some info about the map here</div>
+        </div>
+        <div class="suggestions-container">
+          <div class="suggestion">
+            <h2>Schatz</h2>
+            <p> Some info </p>
+          </div>
+          <div class="suggestion">
+            <h2>Ipsum</h2>
+            <p> Some info </p>
+          </div>
+          <div class="suggestion">
+            <h2>Lorem</h2>
+            <p> Some info </p>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <script src="/static/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/js/jquery.fittext.js"></script>
+    <script src="/static/js/page_script.js"></script>
+  </body>
+</html>
